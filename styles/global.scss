@@ -1,0 +1,32 @@
+$theme-colors: ("primary": #1ca3ff,
+  "danger": #ff4136);
+
+@import "~bootstrap/scss/bootstrap";
+
+.btn-primary {
+  background-image: linear-gradient(to bottom,
+      #59bdf0,
+      #48b7f4,
+      #36b1f8,
+      #26aafc,
+      #1ca3ff);
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.btn-primary:hover {
+  opacity: 1;
+}
+
+.badge {
+  padding: 5px 10px;
+}
+
+.badge-primary {
+  background-color: #1ca3ff;
+}
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}

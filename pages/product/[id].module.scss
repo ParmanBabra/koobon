@@ -1,0 +1,8 @@
+.product-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-layout > * {
+    flex: 50% 1 0;
+}

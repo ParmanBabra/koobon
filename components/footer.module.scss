@@ -1,0 +1,49 @@
+.footer {
+  color: #fff;
+  background-color: #2389c7;
+}
+
+.footer-text{
+  text-align: end;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.top-footer {
+  background-color: #f2f9ff;
+}
+
+@media screen and (max-width: 576px) {
+  .top-footer {
+    display: none;
+  }
+}
+
+
+.box {
+  flex-grow: 1;
+}
+
+.box > h5 {
+  text-transform: uppercase;
+  color: #7e9aaf;
+}
+
+.box > ul {
+  list-style-type: none;
+}
+
+.box span {
+  text-transform: uppercase;
+  color: #7e9aaf;
+}
+
+.icon {
+  margin: 0px 10px;
+  width: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
