@@ -104,7 +104,7 @@ const products = [
     images: ['/images/simple-air-condition.jpg'],
     minPrice: 13100,
     maxPrice: 36500,
-    tags: ['Mitsubishi Electric', 'R32', 'New', 'Inverter', 'Hot'],
+    tags: ['Mitsubishi Electric', 'R32', 'New', 'Inverter'],
   },
   {
     id: 3,
@@ -152,7 +152,7 @@ const products = [
     images: ['/images/simple-air-condition.jpg'],
     minPrice: 28800,
     maxPrice: 43600,
-    tags: ['Mitsubishi Electric', 'R32', 'Hot'],
+    tags: ['Mitsubishi Electric', 'R32'],
   },
   {
     id: 4,

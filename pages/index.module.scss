@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+@import './../styles/app_variable.scss';
+
+
+.hot-product-color1 {
+    flex-basis: 70%;
+    opacity: 0.5;
+    background-color: map-get($map: $main-colors, $key: 50);
+}
+
+.hot-product-color2 {
+    flex-basis: 30%;
+    opacity: 0.5;
+    background-color: $white-color;
+}
+
+.promotions-color1 {
+    flex-basis: 70%;
+    opacity: 0.5;
+    background-color: $white-color;
+}
+
+.promotions-color2 {
+    flex-basis: 30%;
+    opacity: 0.5;
+    background-color: map-get($map: $main-colors, $key: 200);
+}

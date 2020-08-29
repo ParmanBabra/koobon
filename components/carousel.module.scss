@@ -1,0 +1,104 @@
+@use 'sass:map';
+
+@import './../styles/app_variable.scss';
+
+.carousel{
+    margin-bottom: 60px;
+}
+
+.carousel-indicators {
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    right: 5%;
+    left: initial;
+    align-items: center;
+    flex-direction: column;
+}
+
+li.carousel-indicator {
+    width: initial;
+    height: initial;
+    text-indent: initial;
+    background-color: transparent;
+    border: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: map-get($map: $main-colors, $key: 200);
+
+}
+
+.image {
+    max-height: 75vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.label {
+    position: absolute;
+    top: 35%;
+    width: 35vw;
+    max-width: 600px;
+    padding: 10px 20px;
+    background-color: #00000038;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: $white-color;
+
+    p {
+        text-align: right;
+    }
+}
+
+.h1 {
+    margin-bottom: 0px;
+}
+
+.search-panel {
+    position: absolute;
+    bottom: -60px;
+    right: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    background-color: $black-color;
+    padding: 10px 10px;
+    width: 40%;
+}
+
+.input {
+    background-color: transparent;
+    color: $white-color;
+    border-style: none;
+    min-width: 265px;
+}
+
+.input:focus {
+    background-color: transparent;
+    color: $white-color;
+    outline: 0;
+    box-shadow: none;
+}
+
+.icon {
+    span {
+        background-color: transparent;
+        color: $white-color;
+        border: none;
+    }
+}
+
+.logos {
+    display: flex;
+}
+
+.logo {
+    cursor: pointer;
+    padding: 30px 15px;
+    img {
+        max-height: 150px;
+    }
+}

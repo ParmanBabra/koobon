@@ -1,0 +1,48 @@
+@use 'sass:map';
+
+@import './../styles/app_variable.scss';
+
+.menu-bar {
+    position: fixed;
+    z-index: 1;
+}
+
+.menu {
+    background-color: $black-color;
+    color: $white-color;
+    width: calc(15vw);
+    min-width: 265px;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    align-items: center;
+    @include box-shadow(map.get($shadows, 'x2'));
+}
+
+.menu:hover {
+    color: $white-color;
+}
+
+.icon {
+    margin-right: 15px;
+}
+
+.list {
+    width: calc(15vw);
+    min-width: 265px;
+    @include box-shadow(map.get($shadows, 'x2'));
+
+    .list-item {
+        text-align: end;
+        cursor: pointer;
+
+        .icon {
+            margin-right: 0px;
+            margin-left: 15px;
+        }
+
+        &:hover {
+            background-color: map.get($gray-colors, 50);
+        }
+    }
+}

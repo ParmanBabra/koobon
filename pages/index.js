@@ -1,39 +1,69 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Head from 'next/head';
 import Layout from '../components/layout';
-import Slide from '../components/slide';
-import Brands from '../components/brands';
-import Products from '../components/products';
+import Carousel from '../components/carousel';
+import HighlightProduct from '../components/highlight-product';
+import ProductList from '../components/product-list';
+import Subscribe from '../components/subscribe';
+
+import styles from './index.module.scss';
 
 import products from '../data/products';
 import { filter } from '../data/product.action';
 
 const Home = (props) => (
-  <div>
+  <Fragment>
     <Head>
       <title>Home</title>
       <meta
         name='viewport'
         content='width=device-width, initial-scale=1.0'
       ></meta>
-      <link rel='icon' href='/favicon.ico' />
+
+      <script
+        src='https://code.jquery.com/jquery-3.5.1.slim.min.js'
+        integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj'
+        crossorigin='anonymous'
+      ></script>
+      <script
+        src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'
+        integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN'
+        crossorigin='anonymous'
+      ></script>
+      <script
+        src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'
+        integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV'
+        crossorigin='anonymous'
+      ></script>
     </Head>
+
     <Layout>
-      <Slide />
-      <Brands />
-      <Products products={props.newProducts} label='New Product' />
-      <Products products={props.hotProducts} label='Hot Product' />
+      <Carousel showSearhPanel='true' />
+      <HighlightProduct />
+      <ProductList
+        title='Hot Product'
+        color1={styles['hot-product-color1']}
+        color2={styles['hot-product-color2']}
+        products={props.hotProducts}
+      />
+      <ProductList
+        title='Promotions'
+        color1={styles['promotions-color1']}
+        color2={styles['promotions-color2']}
+        products={props.promotionProducts}
+      />
+      <Subscribe />
     </Layout>
-  </div>
+  </Fragment>
 );
 
 export async function getStaticProps() {
-  var newProducts = filter(products, 'New');
+  var promotionProducts = filter(products, 'New');
   var hotProducts = filter(products, 'Hot');
 
   return {
     props: {
-      newProducts: newProducts,
+      promotionProducts: promotionProducts,
       hotProducts: hotProducts,
     },
   };
