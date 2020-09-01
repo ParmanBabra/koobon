@@ -16,13 +16,20 @@ export default class ProductList extends Component {
 
   buildItem = (product) => {
     return (
-      <div className={classNames('card', styles['product-item'])}>
-        <img src={product.boxImage} class='card-img-top' alt={product.name} />
-        <div class='card-body'>
-          <h5 class='card-title'>{product.name}</h5>
-          <p class='card-text'>{product.shortDescription}</p>
+      <div
+        key={product.id}
+        className={classNames('card', styles['product-item'])}
+      >
+        <img
+          src={product.boxImage}
+          className='card-img-top'
+          alt={product.name}
+        />
+        <div className='card-body'>
+          <h5 className='card-title'>{product.name}</h5>
+          <p className='card-text'>{product.shortDescription}</p>
         </div>
-        <a href='#' class='btn btn-primary'>
+        <a href='#' className='btn btn-primary'>
           View
         </a>
       </div>
@@ -40,9 +47,17 @@ export default class ProductList extends Component {
         <div className={styles['product-list']}>
           <p className='h1'>{this.title}</p>
           <hr />
-          <div className={styles['product-items']}>
-            {this.products.map((item) => this.buildItem(item))}
-          </div>
+          {this.products.length == 0 ? (
+            <div className={styles['empty-product']}>
+              <u>
+                <p className='h1'>ไม่พบสินค้า</p>
+              </u>
+            </div>
+          ) : (
+            <div className={styles['product-items']}>
+              {this.products.map((item) => this.buildItem(item))}
+            </div>
+          )}
         </div>
       </div>
     );

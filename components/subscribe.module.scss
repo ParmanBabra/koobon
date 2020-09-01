@@ -26,7 +26,7 @@
 
 .input::placeholder {
     text-align: center;
-    color: map.get($main-colors, 200);
+    color: map.get($main-colors-50, 200);
 }
 
 .input:focus {

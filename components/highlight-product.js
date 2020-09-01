@@ -31,7 +31,8 @@ class HighlightProduct extends Component {
                 เพื่อคุณภาพและความคงทน
                 รวมไปถึงการประหยัดพลังงานและใส่ใจสิ่งแวดล้อม
                 เพื่อสร้างความสุขให้ทุกคนเสมอมา เพราะ "เราคิด...จากชีวิตคุณ"
-                <ul>
+              </p>
+              <ul className='description'>
                   <li>
                     Dual Barrier Coating X3
                     เคลือบสารในชิ้นส่วนของเครื่องปรับอากาศ
@@ -61,7 +62,6 @@ class HighlightProduct extends Component {
                     ล่วงหน้า 12 ชั่วโมง
                   </li>
                 </ul>
-              </p>
             </div>
           </div>
         </div>

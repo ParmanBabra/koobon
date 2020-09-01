@@ -1,16 +1,25 @@
 import React, { Component, createRef } from 'react';
+import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 
+import { slugify } from './../util/format';
+
 import classNames from 'classnames';
 import styles from './carousel.module.scss';
 
-import promotes from './../data/promotes';
-
 class Carousel extends Component {
+  details = [];
+  brands = [];
+  showSearhPanel = false;
+
   constructor(props) {
     super(props);
+
+    this.details = this.props.details;
+    this.brands = this.props.brands;
+    this.showSearhPanel = this.props.showSearhPanel;
   }
 
   buildItem = (active, index, promotion) => {
@@ -47,7 +56,7 @@ class Carousel extends Component {
     );
   };
 
-  buildLogo = (image, index) => {
+  buildLogo = (brand, index) => {
     var color = 'color-main-3';
 
     if (index % 3 == 1) {
@@ -56,16 +65,17 @@ class Carousel extends Component {
     if (index % 3 == 2) {
       color = 'color-main-1';
     }
-
     return (
-      <div className={classNames(styles.logo, color)}>
-        <img src={image} className={classNames('d-block')} />
+      <div key={brand.id} className={classNames(styles.logo, color)} >
+        <Link href="/brands/[name]" as={`/brands/${slugify(brand.brand)}`}>
+          <img src={brand.logo} className={classNames('d-block')} />
+        </Link>
       </div>
     );
   };
 
   buildSearchPanel = () => {
-    if (this.props.showSearhPanel) {
+    if (this.showSearhPanel) {
       return (
         <div className={styles['search-panel']}>
           <div
@@ -89,13 +99,7 @@ class Carousel extends Component {
             </div>
           </div>
           <div className={classNames(styles.logos)}>
-            {this.buildLogo('/images/logo-central-air.png', 0)}
-            {this.buildLogo('/images/logo-daikin.png', 1)}
-            {this.buildLogo('/images/logo-lg.png', 2)}
-
-            {this.buildLogo('/images/logo-mitsubishi-electric.png', 3)}
-            {this.buildLogo('/images/logo-panasonic.png', 4)}
-            {this.buildLogo('/images/logo-samsung.png', 5)}
+            {this.brands.map((brand, index)=>this.buildLogo(brand, index))}
           </div>
         </div>
       );
@@ -103,6 +107,24 @@ class Carousel extends Component {
   };
 
   render() {
+    if (!this.details) {
+      return (
+        <div
+          id='carousel'
+          className={classNames('carousel', 'slide', styles.carousel)}
+          data-ride='carousel'
+        >
+          <ol
+            className={classNames(
+              'carousel-indicators',
+              styles['carousel-indicators'],
+            )}
+          />
+          {this.buildSearchPanel()}
+        </div>
+      );
+    }
+
     return (
       <div
         id='carousel'
@@ -115,12 +137,12 @@ class Carousel extends Component {
             styles['carousel-indicators'],
           )}
         >
-          {promotes.map((item, index) =>
+          {this.details.map((item, index) =>
             this.buildIndicator(index == 0, index),
           )}
         </ol>
         <div className={classNames('carousel-inner')}>
-          {promotes.map((item, index) =>
+          {this.details.map((item, index) =>
             this.buildItem(index == 0, index, item),
           )}
         </div>

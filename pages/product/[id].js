@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import ProductImages from '../../components/product-images';
+//import ProductImages from '../../components/product-images';
 
 import products from '../../data/products';
 import { get } from '../../data/product.action';
