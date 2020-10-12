@@ -1,0 +1,28 @@
+@import './../styles/app_variable.scss';
+
+.name {
+    color: map-get($map: $main-colors, $key: 200);
+    margin-bottom: 1rem;
+}
+
+.stars{
+    margin-bottom: 1rem;
+}
+
+.properties {
+    padding-left: 15px;
+    margin-bottom: 2rem;
+    
+    li {
+        color: map-get($map: $main-colors, $key: 200);
+    }
+}
+.table{
+    margin-bottom: 2rem;
+    thead{
+        tr{
+            background-color: map-get($map: $main-colors, $key: 200);
+            color: $white-color;
+        }
+    }
+}

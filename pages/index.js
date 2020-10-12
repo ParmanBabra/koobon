@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Layout from '../components/layout';
 import CommonHeader from '../components/common-header';
+import Scripts from '../components/scripts';
 import Carousel from '../components/carousel';
 import HighlightProduct from '../components/highlight-product';
 import ProductList from '../components/product-list';
@@ -18,7 +19,7 @@ const Home = (props) => (
     <CommonHeader />
 
     <Layout>
-      <Carousel showSearhPanel={true} brands={brands} details={promotions}/>
+      <Carousel showSearhPanel={true} brands={brands} details={promotions} />
       <HighlightProduct />
       <ProductList
         title='Hot Product'
@@ -34,6 +35,8 @@ const Home = (props) => (
       />
       <Subscribe />
     </Layout>
+
+    <Scripts />
   </Fragment>
 );
 

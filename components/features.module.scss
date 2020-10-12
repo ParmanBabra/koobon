@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+@import './../styles/app_variable.scss';
+
+.section {
+    padding: 70px 60px 70px 60px;
+    background-color: map-get($map: $main-colors, $key: 50);
+
+    :global .h1 {
+        font-weight: bold;
+        display: inline;
+        color: map-get($map: $main-colors, $key: 200);
+    }
+
+    hr {
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 30%;
+        border-top: 3px solid map-get($map: $main-colors, $key: 200);
+        @include box-shadow(map.get($shadows, 'x1'));
+        opacity: 0.35;
+    }
+}
+
+.features {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 40px;
+    row-gap: 40px;
+}
+
+.feature-item {
+    @include box-shadow(map.get($shadows, 'x2'));
+    border-radius: 0rem 0rem 1rem 1rem;
+
+    :global .btn {
+        border-radius: 0rem;
+    }
+}

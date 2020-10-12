@@ -1,0 +1,5 @@
+@import './../styles/app_variable.scss';
+
+.star {
+    color: map-get($map: $main-colors, $key: 200);
+}

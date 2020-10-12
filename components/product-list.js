@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from 'next/link';
 
 import classNames from 'classnames';
 import styles from './product-list.module.scss';
@@ -29,9 +30,9 @@ export default class ProductList extends Component {
           <h5 className='card-title'>{product.name}</h5>
           <p className='card-text'>{product.shortDescription}</p>
         </div>
-        <a href='#' className='btn btn-primary'>
-          View
-        </a>
+        <Link href='/product/[id]' as={`/product/${product.id}`}>
+          <a className='btn btn-primary'>View</a>
+        </Link>
       </div>
     );
   };

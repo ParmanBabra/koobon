@@ -1,8 +1,13 @@
-.product-layout {
+.product-info {
+    padding: 70px 60px 30px 60px;
     display: flex;
     flex-direction: row;
 }
 
-.product-layout > * {
-    flex: 50% 1 0;
+.product-images {
+    flex: 65%;
+}
+
+.product-detail {
+    flex: 35%;
 }
