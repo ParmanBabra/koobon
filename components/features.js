@@ -18,7 +18,13 @@ const buildItem = (feature, index) => {
 };
 
 const Features = (props) => {
+  if(props.product.featuries.length == 0){
+    return <section>
+
+    </section>;
+  }
   return (
+
     <section className={classNames(styles.section)}>
       <p className={classNames('h1')}>Features</p>
       <hr></hr>

@@ -10,7 +10,7 @@ import styles from './stars.module.scss';
 
 const starsToArray = (stars) => {
   let starRound = Math.floor(stars);
-  let array = _.range(1, stars);
+  let array = _.range(0, stars);
   array = _.fill(array, 1);
 
   if (stars - starRound >= 0.5) {
